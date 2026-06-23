@@ -1,0 +1,40 @@
+# This config is a STUB! This should never be generated.
+# Use the default lua config from https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.lua
+
+
+
+$mainMod = SUPER
+$terminal = kitty
+$fileManager = dolphin
+$menu = wofi --show drun
+
+bind = $mainMod, Q, exec, $terminal
+bind = $mainMod, C, killactive,
+bind = $mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit
+bind = $mainMod, E, exec, $fileManager
+bind = $mainMod, V, togglefloating,
+#bind = $mainMod, exec, $menu
+bind = $mainMod, R, submap, resize
+submap = resize
+binde = , right, resizeactive, 20 0
+binde = , left, resizeactive, -20 0
+binde = , up, resizeactive, 0 -20
+binde = , down, resizeactive, 0 20
+bind = , escape, submap, reset
+submap  = reset 
+
+input {
+	kb_layout = latam
+	kb_variant = 
+	kb_model =
+	kb_options =
+
+	follow_mouse = 1
+}
+# Capturar una región seleccionada con el mouse (Se guarda en Imágenes y se copia al portapapeles)
+bind = , Print, exec, grimblast save area
+
+# Capturar toda la pantalla (Se guarda en Imágenes y se copia al portapapeles)
+bind = SHIFT, Print, exec, grimblast save screen
+
+

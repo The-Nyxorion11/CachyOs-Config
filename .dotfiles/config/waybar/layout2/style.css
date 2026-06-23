@@ -1,0 +1,84 @@
+@import "../colors/theme.css";
+
+/* Adjust the height of bar itself in the layout to make the bar smaller/bigger
+* Everythign will scale according once you chage the font-size below
+* due to to how em values work */
+
+* {
+    font-family: "CaskaydiaCove Nerd Font", "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono";
+    border: none;
+    font-family: "CaskaydiaCove Nerd Font", "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 15px; /* ← change this to scale everything accordingly*/
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background-color: @bg-surface;
+    border: 0.1em solid @border-color; 
+    border-radius: 1em;
+}
+
+tooltip {
+    background-color: @bg-overlay;
+    color: @fg-main;
+    border-radius: 0.39em;
+}
+
+#workspaces button {
+    color: @fg-main;
+    background: transparent;
+    border-radius: 0.75em;
+    padding: 0.1em 0.32em;
+    margin: 0.1em;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    background: @accent-active;
+    padding: 0 0.6em;
+    margin: 0.25em;
+    transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#workspaces button:hover {
+    background: @accent-hover;
+    padding: 0 0.6em;
+    margin: 0.25em;
+    color: @fg-strong;
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+/* === Module containers === */
+#custom-swaync,
+#backlight,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#idle_inhibitor,
+#custom-keybindhint,
+#memory,
+#mpris,
+#network,
+#custom-notifications,
+#custom-power,
+#privacy,
+#pulseaudio,
+#custom-spotify,
+#taskbar,
+#taskbar#windows,
+#tray,
+#window,
+#workspaces {
+    font-size: 1.15em; /* ← Agranda el icono un 25% más que la barra */
+    color: @fg-main;
+    background: @bg-surface;
+    opacity: 1;
+    margin: 0.16em 0;   
+    padding: 0 0.21em;  
+}
+
+
+
